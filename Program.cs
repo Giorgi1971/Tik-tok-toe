@@ -27,8 +27,10 @@ while (move)
         currentPlayer = player2;
     }
     Console.WriteLine($"Enter {currentPlayer} position");
-    cord = getCoordinate();
-    
+    int[,] coordinate = getCoordinate();
+
+    // coordinate = ;
+
 
     string[,] cells = new string[3, 3]{{"1","2","3"},{"4","5","6"},{"7","8","9"}}; 
     for (int i = 0; i < 3; i++)
@@ -37,6 +39,15 @@ while (move)
         for (int j = 0; j < 3; j++)
             Console.Write(cells[i, j] + " ");
     }
+    cells[coordinate] = "X";
+
+    for (int i = 0; i < 3; i++)
+    {
+        Console.Write("\n");
+        for (int j = 0; j < 3; j++)
+            Console.Write(cells[i, j] + " ");
+    }
+
     move = false;
 }
 
